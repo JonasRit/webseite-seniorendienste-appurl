@@ -1,0 +1,183 @@
+:root {
+	--ersteFarbe: #db2234;
+	--zweiteFarbe: #8ac3bc;
+	--dritteFarbe: #07546e;
+}
+
+* {
+	box-sizing: border-box
+}
+
+html {
+	width: 100%;
+
+
+}
+
+body {
+	font-family: Roboto, sans-serif;
+	line-height: 1.3;
+	padding: 0px;
+	margin: 0px;
+	background-color: #fff;
+
+}
+
+h1 {
+	color: white;
+}
+
+h2 {
+	color: var(--ersteFarbe);
+}
+h3{
+	color: black;
+}
+
+h4 {
+	color: var(--ersteFarbe);
+	margin-top: -14px;
+	margin-left: 28px;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 22px;
+}
+
+.startbild {
+	position: relative;
+}
+
+.startbild--div {
+	width: 100%;
+	height: 70vh;
+	object-fit: cover;
+	position: relative;
+	overflow: hidden;
+
+
+}
+
+.startbild--div::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to left,
+			rgba(0, 0, 0, 0) 30%,
+			rgba(0, 0, 0, 0.65) 100%);
+}
+
+.startbild--div__img {
+	width: 100%;
+	height: 100%;
+	/* füllt die volle Höhe */
+	object-fit: cover;
+	object-position: center;
+
+
+}
+
+.startbild--text--div--ueberschrift {
+	position: relative;
+
+	top: 0;
+	width: max-content;
+}
+
+
+.startbild--text--div {
+
+	width: auto;
+	color: white;
+
+	position: absolute;
+	top: 21vh;
+	left:100px
+}
+
+.inhalt--div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.inhalt--div--links{
+	width: 50%;
+	
+}
+
+
+
+.inhalt--div--bilder {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+}
+
+.inhalt--div--bilder--einzel {
+
+
+	height: 37vh;
+	object-fit: cover;
+	position: relative;
+	border-radius: 14px;
+	overflow: hidden;
+	margin-left: 30px;
+	margin-bottom: 30px;
+
+}
+
+.inhalt--div--bilder__img {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	/* füllt die volle Höhe */
+	object-fit: cover;
+	object-position: center;
+
+}
+
+/* Desktop */
+@media screen and (min-width: 931px) {
+
+	h1 {
+		font-size: 54px;
+
+	}
+
+	h2 {
+		font-size: 28px;
+
+	}
+
+	body {
+		font-size: 18px;
+	}
+
+	.inhalt {
+		margin: 20px 100px;
+	}
+
+}
+
+
+.checkbox {
+	display: none;
+}
+
+.button {
+	border-radius: 14px;
+	background-color: #07546e;
+	padding: 15px;
+	border: 0px;
+	font-size: 17px;
+	font-weight: 400;
+	font-style: normal;
+	transition: 0.2s;
+	color: white;
+}
+
+.button:hover {
+	background-color: #052e3b;
+	cursor: pointer;
+
+}
