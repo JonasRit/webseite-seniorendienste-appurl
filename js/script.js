@@ -81,7 +81,7 @@ var modeNavbar = {
 
                     if (navbar_right_id) {
                         // Direkt auf scale(1) setzen
-                        
+
                         navbar_right_id.style.height = "100vh";
 
 
@@ -102,17 +102,17 @@ var modeNavbar = {
     desktop: function () {
 
         //Navigation
-	window.onscroll = function() {scrollFunction()};
+        window.onscroll = function () { scrollFunction() };
 
-	function scrollFunction() {
-		if (document.documentElement.scrollTop > 70) {	
-			navbar = document.getElementById("navbar").style.height = "75px";
+        function scrollFunction() {
+            if (document.documentElement.scrollTop > 70) {
+                navbar = document.getElementById("navbar").style.height = "75px";
 
-		} 
-        if (document.documentElement.scrollTop < 40){		
-			navbar = document.getElementById("navbar").style.height = "100px";
-		}	
-	}
+            }
+            if (document.documentElement.scrollTop < 40) {
+                navbar = document.getElementById("navbar").style.height = "100px";
+            }
+        }
 
 
         let jobDiv = document.getElementById("navbar--right--div--buttons--div");
@@ -138,17 +138,51 @@ var modeScroll = {
 
 // Gemeinsame Logik
 function initCommon() {
-    console.log("Init – für alle Geräte");
+    //Init – für alle Geräte
 }
 
 function initCommonBody() {
-    console.log("Body Init – für alle Geräte");
+    //Body Init – für alle Geräte
+
+
+
+
+    // Funktion, die ausgeführt werden soll
+    function onVisible(entry) {
+        console.log("Das Bild ist sichtbar!", entry.target);
+        // Beispiel: Klasse für Animation hinzufügen
+        entry.target.style.transform="scale(1)";
+    }
+
+    // Observer erstellen
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                onVisible(entry);
+                // Optional: Beobachtung beenden, damit es nur einmal passiert
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.01 //  Element muss zu ...threshold... sichtbar sein
+    });
+
+    // Das gewünschte Element beobachten
+    const altenpflegeheim_inhalt_bild1 = document.getElementById("altenpflegeheim_inhalt_bild1");
+    const altenpflegeheim_inhalt_bild2 = document.getElementById("altenpflegeheim_inhalt_bild2");
+    const altenpflegeheim_inhalt_bild3 = document.getElementById("altenpflegeheim_inhalt_bild3");
+    
+    observer.observe(altenpflegeheim_inhalt_bild1);
+    observer.observe(altenpflegeheim_inhalt_bild2);
+    observer.observe(altenpflegeheim_inhalt_bild3);
+
+
 }
 
 function initCommonNavbar() {
-    console.log("Navbar Init – für alle Geräte");
+    //Navbar Init – für alle Geräte
 }
 
 function commonScrollLogic() {
-    console.log("Scroll – für alle Geräte");
+    //Scroll – für alle Geräte
 }
