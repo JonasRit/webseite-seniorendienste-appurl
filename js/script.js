@@ -92,7 +92,6 @@ var modeNavbar = {
                     hamburgerImage.style.width = "50px"
 
                     navbar_right_id.style.height = "0vh";
-                    // Hier Navbar schließen
                 }
             });
         }
@@ -149,8 +148,6 @@ function initCommonBody() {
 
     // Funktion, die ausgeführt werden soll
     function onVisible(entry) {
-        console.log("Das Bild ist sichtbar!", entry.target);
-        // Beispiel: Klasse für Animation hinzufügen
         entry.target.style.transform="scale(1)";
     }
 
