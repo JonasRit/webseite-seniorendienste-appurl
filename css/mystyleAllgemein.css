@@ -101,18 +101,15 @@ h4 {
 }
 
 .inhalt--div--bilder--einzel {
-
-
-	height: 37vh;
-	object-fit: cover;
-	position: relative;
-	border-radius: 14px;
-	overflow: hidden;
-	margin-left: 30px;
-	margin-bottom: 30px;
-	transition: all 1s;
-    transform: scale(0.7);
-
+  height: 37vh;
+  object-fit: cover;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  transition: all 1s;
+  transform: scale(0.7);
 }
 
 .inhalt--div--bilder__img {
@@ -160,15 +157,14 @@ h4 {
 }
 
 .button:hover {
-	background-color: #052e3b;
-	cursor: pointer;
-
+  background-color: #052e3b;
+  cursor: pointer;
 }
 
-.beiFragenMelden{
-	width: 100%;
-	margin-bottom: 100px;
-	padding: 10px;
-	color: white;
-	background-color: var(--dritteFarbe);
+.beiFragenMelden {
+  width: 100%;
+  margin-bottom: 100px;
+  padding: 10px;
+  color: white;
+  background-color: var(--dritteFarbe);
 }
