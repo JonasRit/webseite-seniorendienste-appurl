@@ -1,0 +1,13 @@
+.typing {
+    
+    white-space: nowrap;      /* verhindert Zeilenumbruch */
+    overflow: hidden;         /* versteckt den noch nicht geschriebenen Text */
+    display: inline-block;
+    width: 0;
+    animation: typing 2.3s steps(26, end) forwards; /* nur die Tippen-Animation */
+}
+
+@keyframes typing {
+    from { width: 0ch; }
+    to   { width: 26ch; } /* 30 Zeichen lang, auf Textlänge anpassen */
+}
