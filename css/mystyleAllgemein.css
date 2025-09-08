@@ -28,7 +28,7 @@ h2 {
   color: var(--ersteFarbe);
 }
 
-h4 {
+.inhalt--unterueberschrift {
   color: var(--ersteFarbe);
   margin-top: -14px;
   margin-left: 28px;

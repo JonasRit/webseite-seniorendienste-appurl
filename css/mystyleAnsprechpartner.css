@@ -7,11 +7,15 @@ h2{
 }
 .person {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 20vw;
-  border-radius: 10px;
   overflow: hidden;
   margin-right: 30px;
+  background-color: #e7e7e7;
+}
+.person--div{
+  height: 300px;
 }
 .person__img {
   overflow: hidden;
@@ -19,4 +23,40 @@ h2{
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.person--kasten{
+  position: absolute;
+  top: 240px;
+  padding: 12px 30px;
+  background-color: #db2234cc;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: left;
+  width: 75%;
+  color: white;
+}
+.person--kasten__ohneH4{
+  padding: 25px 30px;
+}
+.person--kasten__h3{
+  font-size:27px;
+  margin: 0px;
+}
+.person--kasten__h4{
+  font-size:20px;
+  margin: 0px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.person--infos{
+  padding: 0px 15px;
+  margin-top: 20px;
+}
+.person--infos h3{
+  margin-top: 40px;
+}
+.bereiche.verwaltung{
+  padding: 30px 0px;
 }
