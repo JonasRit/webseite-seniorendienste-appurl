@@ -1,0 +1,30 @@
+h2{
+    color: white;
+    margin: 0px;
+}
+
+.historie{
+    display: flex;
+    height: min-content;
+}
+.historie--einzelne{
+    width: 400px;
+    margin-right: 15px;
+    color: white;
+    border-radius: 14px;
+    overflow: hidden;
+}
+.historie--einzelne:nth-child(odd){
+    background-color: var(--ersteFarbe);
+}
+
+.historie--einzelne:nth-child(even){
+    background-color: #db2234cc;
+    
+}
+.historie--einzelne--text{
+    padding: 0px 10px;
+}
+.inhalt--div--bilder__img{
+    height: 200px;
+}
