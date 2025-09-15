@@ -35,6 +35,7 @@ h2{
   text-align: left;
   width: 75%;
   color: white;
+  backdrop-filter: blur(1.2px);
 }
 .person--kasten__ohneH4{
   padding: 25px 30px;

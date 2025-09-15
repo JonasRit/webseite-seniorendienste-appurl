@@ -146,34 +146,7 @@ function initCommonBody() {
 
 
 
-    // Funktion, die ausgeführt werden soll
-    function onVisible(entry) {
-        entry.target.style.transform="scale(1)";
-    }
-
-    // Observer erstellen
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                onVisible(entry);
-                // Optional: Beobachtung beenden, damit es nur einmal passiert
-                obs.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.01 //  Element muss zu ...threshold... sichtbar sein
-    });
-
-    // Das gewünschte Element beobachten
-    const altenpflegeheim_inhalt_bild1 = document.getElementById("altenpflegeheim_inhalt_bild1");
-    const altenpflegeheim_inhalt_bild2 = document.getElementById("altenpflegeheim_inhalt_bild2");
-    const altenpflegeheim_inhalt_bild3 = document.getElementById("altenpflegeheim_inhalt_bild3");
-    
-    observer.observe(altenpflegeheim_inhalt_bild1);
-    observer.observe(altenpflegeheim_inhalt_bild2);
-    observer.observe(altenpflegeheim_inhalt_bild3);
-
-
+   
 }
 
 function initCommonNavbar() {

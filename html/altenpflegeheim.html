@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/mystyleAltenpflegeheim.css" />
 
     <script language="javascript" type="text/javascript" src="../js/script.js" defer></script>
+    <script language="javascript" type="text/javascript" src="../js/scriptAltenpflegeheim.js" defer></script>
     <script src="https://kit.fontawesome.com/09cf40ab3a.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +19,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-    <title>Startseite</title>
+    <title>Altenpflegeheim</title>
 </head>
 
 <body>
@@ -117,7 +118,134 @@
                         der Biografie der Bewohner orientiert.
                     </p>
 
+                    <div class="inhalt--div--links--kurzzeitpflegeRechner">
 
+                        <h2 class="kurzZeitrechner--uberschrift">Kurzzeitpflege Rechner</h2>
+                        <div class="divDate">
+                            <div class="input-group Date">
+
+                                <label class="input-group__label" for="start-date">Von:</label>
+
+                                <input type="date" id="start-date" class="input date-input">
+                            </div>
+
+                            <div class="input-group Date">
+
+                                <label class="input-group__label" for="end-date">Bis:</label>
+
+                                <input type="date" id="end-date" class="input date-input">
+                            </div>
+                        </div>
+                        <div id="ausgewaehlter_zeitraum_fehler" class="error"></div>
+
+                        <div class="input-group pflegegrad">
+                            
+                                <label class="input-group__label"  for="pflegegrad">Wähle Pflegegrad:</label>
+                            
+                            <select class="input pflegegrad-input" name="pflegegard" id="pflegegrad">
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+
+
+
+
+
+
+                        <h3>Nehmen Sie bereits Pflegeleistungen in Anspruch?</h3>
+                        <div class="divButton">
+                            <input class="button anspruch" type="button" value="Ja" id="ja_button">
+                            <input class="button anspruch" type="button" value="Nein" id="nein_button">
+                        </div>
+
+                        <div class="divRestbetrag" id="contentContainer">
+
+
+
+                            <h3>Zur Verfügungstehender Restbetrag:</h3>
+                            <div class="input-group Anspruch">
+
+                                <label class="input-group__label" for="pflegekasse_kzp-anspruch">Kurzzeitpflege:</label>
+                                <div>
+                                    <input type="number" min="0" max="1774" step="100" placeholder="max: 1774"
+                                        id="pflegekasse_kzp-anspruch" class="input anspruch-input">
+                                    <span class="euro">€</span>
+                                </div>
+                            </div>
+                            <div id="divtext_kzp-anspruch" class="error"></div>
+                            <div class="input-group Anspruch">
+
+                                <label class="input-group__label"
+                                    for="pflegekasse_verhinderungspf">Verhinderungspflege:</label>
+                                <div>
+                                    <input type="number" min="0" max="1612" step="100" placeholder="max: 1612"
+                                        id="pflegekasse_verhinderungspf" class="input anspruch-input">
+                                    <span class="euro">€</span>
+                                </div>
+                            </div>
+                            <div id="divtext_verhinderungspf" class="error"></div>
+                        </div>
+
+
+                        <button class="button rechnen" onclick="zeigeAusgewaehlteDaten()">Rechnen</button>
+
+
+
+                        <div class="divTabelleKurz_Rechner">
+                            <table id="idTabelle_kurzRechner" class="tabelleKurz_Rechner">
+                                <tr>
+                                    <th>Bereiche:</th>
+                                    <th>Anz. Tage:</th>
+                                    <th>Entg./Tg.:</th>
+                                    <th>Entgelt:</th>
+                                    <th>Pflege-kasse:</th>
+                                    <th>Eigen:</th>
+                                </tr>
+                                <tbody id="ergenissTabelle">
+                                    <tr>
+                                        <td>Pflege:</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    <tr></tr>
+                                    <td>Unterkunft + Verpf.:</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Invest:</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Summe:</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="zusatzTage" id="divtext_Zusatztage"></div>
+
+
+
+
+                    </div>
 
                 </div>
             </div>

@@ -1,3 +1,40 @@
-img{
-    filter: brightness(1.1);
+img {
+  filter: brightness(1.1);
+}
+.inhalt--div--links--kurzzeitpflegeRechner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.kurzZeitrechner--uberschrift {
+  color: var(--dritteFarbe);
+}
+.input-group {
+  display: inline-block;
+}
+.input {
+    padding: 5px;
+    font-family: var(--fontFamily);
+    font-size: 17px;
+}
+.input-group {
+    margin-top: 10px;
+}
+.anspruch-input{
+    width: 200px;
+}
+.button.rechnen{
+    margin-top: 20px;
+    width: 200px;
+}
+.input-group{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+}
+.input-group__label{
+    margin:auto 0;
+}
+.euro{
+    margin: auto 0;
 }
