@@ -37,6 +37,31 @@ document.addEventListener("DOMContentLoaded", function () {
             if (modeNavbar[currentMode]) modeNavbar[currentMode]();
         }
     });
+
+
+
+    document.getElementById('ja_button').addEventListener('click', ja_wurde_geklickt);
+	document.getElementById('nein_button').addEventListener('click', nein_wurde_geklickt);
+    		// Das soll passieren wenn "id=ja/nein_button" angeklicket wurde
+		function ja_wurde_geklickt() {
+			document.getElementById('contentContainer').style.display = 'block';		
+			document.getElementById('ja_button').style.color = 'white';
+			document.getElementById('ja_button').style.backgroundColor = '#052e3b';
+			document.getElementById('nein_button').style.color = 'gray';
+			document.getElementById('nein_button').style.backgroundColor = '#b3b3b3';
+			
+		}
+		function nein_wurde_geklickt() {
+			document.getElementById('contentContainer').style.display = 'none';
+			document.getElementById('nein_button').style.color = 'white';
+			document.getElementById('nein_button').style.backgroundColor = '#052e3b';
+			document.getElementById('ja_button').style.color = 'gray';
+			document.getElementById('ja_button').style.backgroundColor = '#b3b3b3';
+			document.getElementById("pflegekasse_kzp-anspruch").value = "";
+			document.getElementById("pflegekasse_verhinderungspf").value = "";
+
+		}
+
 });
 
 function getDeviceMode() {
@@ -96,6 +121,7 @@ function initCommonBody() {
 
 
     //Kurzzeitpflegerechner
+
 
     function kurzzeitpflegerechner(von, bis, pflegegrad, bereitsPflAnspruch, kurzzeitpflege, verhinderungspflege) {
         var days = bis-von;
