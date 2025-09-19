@@ -2,3 +2,17 @@
     height: 300px;
     width: 400px;
 }
+
+.inhalt--div--bilder--zitat{
+    display: flex;
+
+}
+.inhalt--div--bilder--zitat--bild{
+    width: 500px;
+}
+.inhalt--div--bilder--zitat--bild__img{
+    width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center
+}
