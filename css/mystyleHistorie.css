@@ -1,36 +1,7 @@
-/* Ihre ursprünglichen Stile für die Elemente */
+/* --- Allgemeine Styles --- */
 h2 {
     color: white;
-    margin: 0px;
-}
-
-.historie--einzelne {
-    /*
-     * WICHTIGE ÄNDERUNG:
-     * Statt 'width: 400px' nutzen wir 'flex', damit immer genau 3 Elemente
-     * in den sichtbaren Bereich passen.
-     */
-    flex: 0 0 calc(100% / 3);
-    box-sizing: border-box; /* Stellt sicher, dass padding die Breite nicht beeinflusst */
-    padding: 0 10px; /* Fügt einen Abstand zwischen den Elementen hinzu */
-
-    color: white;
-    border-radius: 14px;
-    overflow: hidden;
-    display: flex; /* Hilfreich für die innere Ausrichtung */
-    flex-direction: column;
-}
-
-.historie--einzelne:nth-child(odd) {
-    background-color: var(--ersteFarbe, #005a9e);
-}
-
-.historie--einzelne:nth-child(even) {
-    background-color: #db2234cc;
-}
-
-.historie--einzelne--text {
-    padding: 15px 10px;
+    margin: 0;
 }
 
 .inhalt--div--bilder__img {
@@ -39,12 +10,15 @@ h2 {
     object-fit: cover;
 }
 
+.historie--einzelne--text {
+    padding: 15px 10px;
+}
 
-/* Benötigte Stile für die Slider-Funktionalität */
+/* --- Slider Funktionalität --- */
 .historie-container {
     position: relative;
     margin: 40px auto;
-    padding: 0 50px;
+    padding: 0 50px; /* Platz für die Pfeile */
     box-sizing: border-box;
 }
 
@@ -55,11 +29,58 @@ h2 {
 
 .historie {
     display: flex;
-    height: min-content;
     transition: transform 0.5s ease-in-out;
+    /* KEIN 'gap' hier, der Abstand wird über padding im Item geregelt */
 }
 
-/* Stile für die Navigationspfeile (unverändert) */
+/* --- Korrigiertes Item-Styling --- */
+
+/* 1. Der äußere Wrapper: NUR für Breite und Abstand zuständig */
+.historie--einzelne {
+    flex-shrink: 0;
+    /* Legt fest, dass 3 Elemente sichtbar sind */
+    flex-basis: 33.3333%;
+    /* Erzeugt den Abstand zwischen den Inhalten der Boxen */
+    padding: 0 10px;
+    /* Unverzichtbar, damit das Padding die prozentuale Breite nicht sprengt */
+    box-sizing: border-box;
+}
+
+/* 2. Der innere Container: NUR für das sichtbare Styling (Farbe, Ecken) */
+.historie--einzelne--inhalt {
+    color: white;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. Korrekter nth-child Selektor: Zählt den äußeren und färbt den inneren */
+.historie--einzelne:nth-child(odd) .historie--einzelne--inhalt {
+    background-color: var(--ersteFarbe); /* Deine erste Farbe */
+}
+
+.historie--einzelne:nth-child(even) .historie--einzelne--inhalt {
+    background-color: #db2234cc; /* Deine zweite Farbe */
+}
+
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+    .historie--einzelne {
+        flex-basis: 50%; /* 2 Elemente auf Tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .historie--einzelne {
+        flex-basis: 100%; /* 1 Element auf Mobilgeräten */
+    }
+}
+
+
+/* --- Pfeil-Styling (unverändert) --- */
 .nav-arrow {
     position: absolute;
     top: 50%;
@@ -76,19 +97,15 @@ h2 {
     align-items: center;
     justify-content: center;
 }
-
 .nav-arrow:hover {
     background-color: white;
 }
-
 .nav-arrow-left {
     left: 0;
 }
-
 .nav-arrow-right {
     right: 0;
 }
-
 .nav-arrow:disabled {
     cursor: not-allowed;
     opacity: 0.4;
